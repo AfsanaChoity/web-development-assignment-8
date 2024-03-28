@@ -8,13 +8,13 @@ import Blogs from './pages/Blogs.jsx'
 import Bookmark from './pages/Bookmark.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
 import SingleBlog from './pages/SingleBlog.jsx'
-import Shop from './pages/Shop.jsx'
-import Cart from './pages/Cart.jsx'
+
 import ListedBooks from './pages/ListedBooks.jsx'
 import PagesToRead from './pages/PagesToRead.jsx'
 import BookDetails from './pages/BookDetails.jsx'
-import AboutUs from './pages/AboutUs.jsx'
+
 import Contact from './pages/Contact.jsx'
+import NotFound from './components/NotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -49,6 +49,10 @@ const router = createBrowserRouter([
         element: <Contact></Contact>
       }
     ]
+  },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
   }
   
 ]);
