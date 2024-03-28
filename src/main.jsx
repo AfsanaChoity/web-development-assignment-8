@@ -8,6 +8,10 @@ import Blogs from './pages/Blogs.jsx'
 import Bookmark from './pages/Bookmark.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
 import SingleBlog from './pages/SingleBlog.jsx'
+import Shop from './pages/Shop.jsx'
+import Cart from './pages/Cart.jsx'
+import ListedBooks from './pages/ListedBooks.jsx'
+import PagesToRead from './pages/PagesToRead.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,8 +23,8 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/blogs',
-        element: <Blogs></Blogs>,
+        path: '/listedBooks',
+        element: <ListedBooks></ListedBooks>,
         loader: () => fetch('https://dev.to/api/articles/?per_page=20&top=7')
       },
       {
@@ -29,8 +33,16 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`https://dev.to/api/articles/${params.id}`)
       },
       {
-        path: '/bookmark',
-        element: <Bookmark></Bookmark>
+        path: '/pageToRead',
+        element: <PagesToRead></PagesToRead>
+      },
+      {
+        path: '/shop',
+        element: <Shop></Shop>
+      },
+      {
+        path: '/cart',
+        element: <Cart></Cart>
       }
     ]
   }

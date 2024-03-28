@@ -1,38 +1,44 @@
-import { useEffect, useState } from "react";
+
 import { Link, NavLink } from "react-router-dom";
 
 
 
 const Nav = () => {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-    
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-    
-    const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-
-    };
+   
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-lg px-4 fixed">
-                <div className="flex-1">
-                    <Link to = '/' className="btn btn-ghost gap-0 text-secondary text-2xl normal-case">Byte<span className="text-primary">Blaze</span></Link>
+        <div className="lg:mx-20 mt-8">
+            
+
+            
+            <div className="navbar bg-base-100 ">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <NavLink to='/' className={({ isActive }) => isActive && ' text-green-500'}>Home</NavLink>
+                            <NavLink to='/listedBooks' className={({ isActive }) => isActive && ' text-green-500'}>Listed Books</NavLink>
+                            <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500'}>Pages to Read</NavLink>
+                            <NavLink to='/shop' className={({ isActive }) => isActive && ' text-green-500'}>Shop</NavLink>
+                            <NavLink to='/cart' className={({ isActive }) => isActive && ' text-green-500'}>Cart</NavLink>
+                        </ul>
+                    </div>
+                    <Link to='/' className="btn btn-ghost gap-0 text-3xl normal-case font-bold">BoiBazar</Link>
                 </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1 font-bold flex gap-4">
-                        <NavLink to = '/' className={({isActive}) => isActive && 'text-primary'}>Home</NavLink>
-                        <NavLink to = '/blogs' className={({isActive}) => isActive && 'text-primary'}>Blogs</NavLink>
-                        <NavLink to = '/bookmark' className={({isActive}) => isActive && 'text-primary'}>Bookmark</NavLink>
-
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal px-1 gap-6 lg:items-center">
+                        <NavLink to='/' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Home</NavLink>
+                        <NavLink to='/listedBooks' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Listed Books</NavLink>
+                        <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Pages to Read</NavLink>
+                        <NavLink to='/shop' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Shop</NavLink>
+                        <NavLink to='/cart' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Cart</NavLink>
                     </ul>
+                </div>
+                <div className="navbar-end gap-6">
+                    <button className="btn btn-success text-white bg-green-500">Sign in</button>
 
-                    <label className="cursor-pointer grid place-items-center">
-                        <input  value="dark" type="checkbox" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" onChange={toggleTheme} checked={theme === 'dark'}/>
-                        <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
-                        <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                    </label>
+                    <button className="btn btn-success text-white bg-blue-500">Sign Up</button>
                 </div>
             </div>
 
