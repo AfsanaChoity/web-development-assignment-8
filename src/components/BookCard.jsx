@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
     console.log(book);
-    const { image, tags, bookName, author, category, rating } = book;
+    const { image, tags, bookName, author, category, rating, bookId } = book;
     return (
 
-        <div className="transition border-2 border-primary  rounded-lg hover:scale-105  border-opacity-30 p-5">
-            <Link to={``}
+        <div className="transition border-2 border-primary  rounded-lg   border-opacity-30 p-5">
+            <Link to={`/book/${bookId}`}
                 className="max-w-sm mx-auto group  hover:no-underline focus:no-underline bg-gray-900 dark:bg-gray-50 bg-gray-900 dark:bg-gray-50">
                 <div className=" bg-gray-100 flex justify-center rounded-lg ">
                     <img role="presentation" className="object-cover   rounded h-44 my-10" src={image} />

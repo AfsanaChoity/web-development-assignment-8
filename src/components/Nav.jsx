@@ -20,8 +20,8 @@ const Nav = () => {
                             <NavLink to='/' className={({ isActive }) => isActive && ' text-green-500'}>Home</NavLink>
                             <NavLink to='/listedBooks' className={({ isActive }) => isActive && ' text-green-500'}>Listed Books</NavLink>
                             <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500'}>Pages to Read</NavLink>
-                            <NavLink to='/shop' className={({ isActive }) => isActive && ' text-green-500'}>Shop</NavLink>
-                            <NavLink to='/cart' className={({ isActive }) => isActive && ' text-green-500'}>Cart</NavLink>
+                            <NavLink to='/bookDetails' className={({ isActive }) => isActive && ' text-green-500'}>Book Details</NavLink>
+                            <NavLink to='/contact' className={({ isActive }) => isActive && ' text-green-500'}>Contact Us</NavLink>
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost gap-0 text-3xl normal-case font-bold">BoiBazar</Link>
@@ -31,8 +31,8 @@ const Nav = () => {
                         <NavLink to='/' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Home</NavLink>
                         <NavLink to='/listedBooks' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Listed Books</NavLink>
                         <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Pages to Read</NavLink>
-                        <NavLink to='/shop' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Shop</NavLink>
-                        <NavLink to='/cart' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Cart</NavLink>
+                        <NavLink to='/bookDetails' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Book Details</NavLink>
+                        <NavLink to='/contact' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Contact Us</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-6">

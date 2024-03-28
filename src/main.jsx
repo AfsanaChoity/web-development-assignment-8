@@ -12,6 +12,9 @@ import Shop from './pages/Shop.jsx'
 import Cart from './pages/Cart.jsx'
 import ListedBooks from './pages/ListedBooks.jsx'
 import PagesToRead from './pages/PagesToRead.jsx'
+import BookDetails from './pages/BookDetails.jsx'
+import AboutUs from './pages/AboutUs.jsx'
+import Contact from './pages/Contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,21 +32,21 @@ const router = createBrowserRouter([
         loader: () => fetch('https://dev.to/api/articles/?per_page=20&top=7')
       },
       {
-        path: `/blog/:id`,
-        element: <SingleBlog></SingleBlog>,
-        loader: ({params}) => fetch(`https://dev.to/api/articles/${params.id}`)
+        path: `/book/:id`,
+        element: <BookDetails></BookDetails>,
+        loader: ({params}) => fetch(`/fakeData.json/${params.id}`)
       },
       {
         path: '/pageToRead',
         element: <PagesToRead></PagesToRead>
       },
       {
-        path: '/shop',
-        element: <Shop></Shop>
+        path: '/bookDetails',
+        element: <BookDetails></BookDetails>
       },
       {
-        path: '/cart',
-        element: <Cart></Cart>
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ]
   }
