@@ -5,9 +5,9 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Blogs from './pages/Blogs.jsx'
-import Bookmark from './pages/Bookmark.jsx'
+
 import MainLayout from './layouts/MainLayout.jsx'
-import SingleBlog from './pages/SingleBlog.jsx'
+
 
 import ListedBooks from './pages/ListedBooks.jsx'
 import PagesToRead from './pages/PagesToRead.jsx'
@@ -34,16 +34,20 @@ const router = createBrowserRouter([
       {
         path: `/book/:id`,
         element: <BookDetails></BookDetails>,
-        loader: ({params}) => fetch(`/fakeData.json/${params.id}`)
+        loader: async ({ params }) => {
+          const response = await fetch(`/fakeData.json`);
+          const data = await response.json();
+          const book = data.find(item => item.bookId === Number(params.id));
+          return book;
+      }
+        
+
       },
       {
         path: '/pageToRead',
         element: <PagesToRead></PagesToRead>
       },
-      {
-        path: '/bookDetails',
-        element: <BookDetails></BookDetails>
-      },
+      
       {
         path: '/contact',
         element: <Contact></Contact>

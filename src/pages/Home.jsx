@@ -6,7 +6,7 @@ import BookCard from "../components/BookCard";
 
 const Home = () => {
     const books = useLoaderData();
-    console.log(books);
+    // console.log(books);
 
 
     return (

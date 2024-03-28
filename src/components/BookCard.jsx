@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
-    console.log(book);
+    // console.log(book);
     const { image, tags, bookName, author, category, rating, bookId } = book;
     return (
 
