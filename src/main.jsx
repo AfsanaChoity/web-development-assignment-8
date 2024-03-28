@@ -20,11 +20,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('/fakeData.json')
       },
       {
         path: '/listedBooks',
-        element: <ListedBooks></ListedBooks>,
+        element: <Blogs></Blogs>,
         loader: () => fetch('https://dev.to/api/articles/?per_page=20&top=7')
       },
       {
