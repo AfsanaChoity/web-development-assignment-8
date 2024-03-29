@@ -52,3 +52,9 @@ export const getReadBooks = () => {
     return data;
 
 }
+
+export const getWishListBooks = () => {
+    const data = JSON.parse(localStorage.getItem("wishlist")) || [];
+    return data;
+
+}

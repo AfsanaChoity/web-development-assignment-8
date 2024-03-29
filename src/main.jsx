@@ -17,6 +17,7 @@ import Contact from './pages/Contact.jsx'
 import NotFound from './components/NotFound.jsx'
 import FAQ from './pages/FAQ.jsx'
 import ListedBooks from './pages/ListedBooks.jsx'
+import WishListBook from './components/WishListBook.jsx'
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,10 @@ const router = createBrowserRouter([
 
       },
         
-
+      {
+        path: '/wishlist',
+        element: <WishListBook></WishListBook>
+      },
       
       {
         path: '/pageToRead',

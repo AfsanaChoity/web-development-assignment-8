@@ -1,5 +1,7 @@
+import { NavLink } from "react-router-dom";
 import UseLocalStore from "../Hooks/UseLocalStore";
 import ReadBook from "../components/ReadBook";
+// import WishListBook from "../components/WishListBook";
 
 
 
@@ -7,6 +9,7 @@ import ReadBook from "../components/ReadBook";
 
 const ListedBooks = () => {
     const {localData} = UseLocalStore();
+    
     
     return (
         <div className="mx-20 mt-6">
@@ -20,15 +23,22 @@ const ListedBooks = () => {
 
             </div>
 
-            <div className="flex gap-6">
-            <button className="btn btn-outline border-none">Read</button>
-            <button className="btn btn-outline border-none">Wishlist</button>
+            <div className="flex gap-6 mb-4 mt-6 items-center">
+            <NavLink  to='/listedBooks' className={({ isActive }) => isActive && ' border rounded-lg p-2 bg-orange-200  text-orange-700'}>Read Books</NavLink>
+            <NavLink  to= '/wishlist' className={({ isActive }) => isActive && ' border rounded-lg p-2 bg-orange-200  text-orange-700'}>Wishlist</NavLink>
+           
             </div>
             {
                 localData.map((data) => (
                     <ReadBook key={data.bookId} data={data}></ReadBook>
                 ))
+
+                
+
+
             }
+            
+
 
         </div>
     );
