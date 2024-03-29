@@ -7,7 +7,7 @@ import ReadBook from "../components/ReadBook";
 
 const ListedBooks = () => {
     const {localData} = UseLocalStore();
-    // console.log(localData);
+    
     return (
         <div className="mx-20 mt-6">
             <div className="bg-gray-100 rounded-lg text-center">

@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const ReadBook = (data) => {
 
-    const { image, bookName, author, category, tags, totalPages, publisher, yearOfPublishing, rating } = data.data;
+    const { image, bookName, author, category, tags, totalPages, publisher, yearOfPublishing, rating, bookId } = data.data;
     return (
         <div>
             <div className="hero border mb-6 rounded-lg    lg:grid lg:justify-items-start ">
@@ -41,7 +42,7 @@ const ReadBook = (data) => {
                             <div className=" rounded-full bg-orange-200  text-orange-500 p-2 ">
                                 <p>Rating: {rating}</p>
                             </div>
-                        <button className=" bg-green-600 text-white rounded-full border-none px-2">View Details</button>
+                        <Link to={`/book/${bookId}`} className=" bg-green-600 text-white rounded-full border-none px-2 flex items-center">View Details</Link>
                         </div>
                     </div>
                 </div>
