@@ -16,6 +16,7 @@ import BookDetails from './pages/BookDetails.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './components/NotFound.jsx'
 import FAQ from './pages/FAQ.jsx'
+import ListedBooks from './pages/ListedBooks.jsx'
 
 const router = createBrowserRouter([
   {
@@ -36,10 +37,17 @@ const router = createBrowserRouter([
           const data = await response.json();
           const book = data.find(item => item.bookId === Number(params.id));
           return book;
-      }
-        
+        }
+      },
+
+      {
+        path: '/listedBooks',
+        element: <ListedBooks></ListedBooks>
 
       },
+        
+
+      
       {
         path: '/pageToRead',
         element: <PagesToRead></PagesToRead>
