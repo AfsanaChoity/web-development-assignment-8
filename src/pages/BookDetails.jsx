@@ -7,9 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const BookDetails = () => {
     const book = useLoaderData();
-    // console.log('this is book details', book);
+    
 
-    const id = book.Id;
+    
     
 
     const [clicked, setClicked] = useState(false);

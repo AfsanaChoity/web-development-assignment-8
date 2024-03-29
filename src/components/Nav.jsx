@@ -22,6 +22,7 @@ const Nav = () => {
                             <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500'}>Pages to Read</NavLink>
                             {/* <NavLink to='/bookDetails' className={({ isActive }) => isActive && ' text-green-500'}>Book Details</NavLink> */}
                             <NavLink to='/contact' className={({ isActive }) => isActive && ' text-green-500'}>Contact Us</NavLink>
+                            <NavLink to='/faq' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>FAQ</NavLink>
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost gap-0 text-3xl normal-case font-bold">BoiBazar</Link>
@@ -33,6 +34,7 @@ const Nav = () => {
                         <NavLink to='/pageToRead' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Pages to Read</NavLink>
                         {/* <NavLink to='/bookDetails' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Book Details</NavLink> */}
                         <NavLink to='/contact' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>Contact Us</NavLink>
+                        <NavLink to='/faq' className={({ isActive }) => isActive && ' text-green-500 border border-green-500 rounded-md py-2 px-4'}>FAQ</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-6">

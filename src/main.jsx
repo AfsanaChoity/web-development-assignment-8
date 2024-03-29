@@ -4,17 +4,18 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import Blogs from './pages/Blogs.jsx'
+
 
 import MainLayout from './layouts/MainLayout.jsx'
 
 
-import ListedBooks from './pages/ListedBooks.jsx'
+
 import PagesToRead from './pages/PagesToRead.jsx'
 import BookDetails from './pages/BookDetails.jsx'
 
 import Contact from './pages/Contact.jsx'
 import NotFound from './components/NotFound.jsx'
+import FAQ from './pages/FAQ.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,11 +27,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch('/fakeData.json')
       },
-      {
-        path: '/listedBooks',
-        element: <Blogs></Blogs>,
-        loader: () => fetch('https://dev.to/api/articles/?per_page=20&top=7')
-      },
+      
       {
         path: `/book/:id`,
         element: <BookDetails></BookDetails>,
@@ -51,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path: '/faq',
+        element: <FAQ></FAQ>
       }
     ]
   },
