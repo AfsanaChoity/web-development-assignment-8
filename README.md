@@ -1,6 +1,6 @@
 # BoiBazar - A Haven for Book Lovers 
 
-**Live Site:** [Your Website URL] (Replace with your actual website URL)
+**Live Site:** [https://glittery-semifreddo-018650.netlify.app/] (Replace with your actual website URL)
 
 
 
