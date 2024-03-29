@@ -1,7 +1,7 @@
-import { useState } from "react";
+
 import { useLoaderData } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import { saveToLocal, saveToLocalWishlist } from "../utils/LocalStore";
 
 
 
@@ -9,45 +9,15 @@ const BookDetails = () => {
     const book = useLoaderData();
     
 
-    
-    
-
-    const [clicked, setClicked] = useState(false);
-    const [wishclicked, setWishClicked] = useState(false);
-
-
     const handleRead = () => {
-        if(!clicked){
-            
-            setClicked(true);
-            toast('Added to Read-list');
-            
-        localStorage.setItem('readlistBooks', JSON.stringify(book));
-        }
-        else {
-            toast('Already added to Read-list');
-        }
+       saveToLocal(book);
         
  };
  
 
     const handleWishlist = () => {
-        if(!clicked && !wishclicked){
-            
-            setClicked(true);
-            setWishClicked(true);
-            toast('Added to Wishlist');
-            
-        localStorage.setItem('wishlistBooks', JSON.stringify(book));
-        }
-        else if(clicked) {
-            toast('Already added to Read-list');
-        }
-        else
-        {
-            toast('Already added to Wishlist');
-        }
-
+        
+        saveToLocalWishlist(book);
        
     }
 
@@ -100,7 +70,7 @@ const BookDetails = () => {
                             <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold border rounded border-gray-100 dark:border-gray-800" onClick={handleRead}>Read</a>
 
                             <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50" onClick={handleWishlist}>Wishlist</a>
-                            <ToastContainer></ToastContainer>
+                            
 
                         </div>
                     </div>
